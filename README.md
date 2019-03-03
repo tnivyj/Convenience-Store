@@ -6,5 +6,5 @@ DatabaseFinalProject, have some information about convenience store in Taiwan
 
 - 简单介绍台湾的两大超商7-11和FamilyMart
 - 内含台湾各地两大超商的数量，以及从您当前所在位置前往某超商的路径(drive)  
-
+- 以下为之前做的readMePic
 ![readmepic](https://github.com/tnivyj/Convenience-Store/blob/master/ReadMe.png)
