@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>LogIn</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!--
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+        </script>
+-->
+        <style>
+            ::selection{background-color:rgba(207,74,92,0.15)}
+            ::-moz-selection{background-color:rgba(207,74,92,0.15)}
+            ::-webkit-selection{background-color:rgba(207,74,92,0.15)}
+            .input{
+				border:none #FFFFFF;
+				border-bottom:#777777 solid 1px;
+				background:transparent;
+                height: 50px;
+                width: 300px;
+                margin: 10px;
+			}
+            #login{
+                height: 300px;
+                width: 400px;
+                text-align: center;
+                margin: 200px auto;
+                padding-top: 20px;
+                background-color: rgba(255,255,255,0.7);
+            }
+            #btnlogin {
+                background-color: #e7e7e7;
+                border: none;
+                border-radius: 5px;
+                color: black;
+                text-align: center;
+                text-decoration: none;
+                font-size: 16px;
+                margin: 40px 2px;
+                cursor: pointer;
+                padding: 10px 140px;
+            }
+            #btnlogin:hover{
+                background-color: #FFFFFF;
+            }
+            #demo{
+                height: 30px;
+                text-align: center;
+                color: red;
+                font-size: 15px;
+/*                border: solid red;*/
+            }
+        </style>
+        <script>
+            function LogIn() {
+                var myAcc = $('#myAccount').val();
+                var myPw = $('#myPassword').val();
+//                console.log(myAcc, myPw);
+                if(myAcc == '' && myPw == ''){
+                    $('#demo').text('请输入账号和密码');
+                }else{
+                    if(myPw == ''){
+                        $('#demo').text('请输入密码');
+                    }else{
+                        UserCheck(myAcc, myPw);
+                    }
+                }
+            }
+            function UserCheck(myAcc, myPw) {
+                var params = {phpAccount: myAcc, phpPassword: myPw};
+//                console.log(params);
+                $.ajax({
+                    url: 'userCheck.php',
+                    type: 'POST',
+                    data: params,
+                    dataType: 'json',
+                    async: true,
+                    /* 函式中的 backData 參數，代表伺服器回傳的查詢結果 */
+                    success: function (backData, jqXHR) {
+                        console.log(backData);
+                        if (backData == "null"){
+                            document.getElementById('demo').innerHTML = "没有资料!";
+                        } else {
+                            DispUserlogIn(backData);
+                        }
+                    },
+                    error: function (textStatus) {
+                        console.log("error:" + textStatus);
+                        $('#myAccount').val('');
+                        $('#myPassword').val('');
+                        $('#demo').text('账号不存在，请重新输入');
+                    }
+                });
+            }
+            function DispUserlogIn(inData) {
+                if(inData[0].Mname == $('#myAccount').val() && inData[0].Mpassword == $('#myPassword').val()){
+                    window.location.href = 'index.php';
+                }else if(inData[0].Mname == $('#myAccount').val() && inData[0].Mpassword != $('#myPassword').val()){
+                    $('#myPassword').val('');
+                    $('#demo').text('密码错误，请重新输入');
+                }
+            }
+            
+            $(document).keyup(function(event){ 
+                if(event.keyCode ==13){ //按下enter键
+                  $("#btnlogin").trigger("click"); 
+                } 
+            });
+            
+            //保持输入字母为大写
+//            function myUp(){
+//                var myName = document.getElementById("myAccount");
+//                myName.value = myName.value.toUpperCase();
+//            }
+        </script>
+    </head>
+    <body>
+        <div id="login">
+            <input type="text" placeholder="账号" class="input" id="myAccount"><br>
+            <input type="password" placeholder="密码" class="input" id="myPassword"><br>
+            <input type="button" value="登录" id="btnlogin" onclick="LogIn()">
+            <div id="demo"></div>
+        </div>
+    </body>
+</html>
