@@ -1,0 +1,123 @@
+/*
+#divAdd{
+    border: solid red;
+}
+#divSearch{
+    border: solid yellow;
+}
+#divUpdate{
+    border: solid green;
+}
+#divDelete{
+    border: solid blue;
+}
+*/
+.sidenav {
+    width: 80px;
+}
+.sidenav > a{
+    padding-left: 20px;
+    line-height: 50px;
+}
+#main,#content{
+    margin-left: 80px;
+}
+#medium{
+    font-family: i-medium;
+    font-size: 40px;
+}
+.input{
+/*输入框*/
+    border:none #FFFFFF;
+    border-bottom:#777777 solid 1px;
+    background:transparent;
+    height: 50px;
+    width: 400px;
+    margin: 10px;
+}
+div.leftInput{
+/*    border: solid pink;*/
+    display: inline-block;
+    float: left;
+    width: 45%;
+    padding: 30px 0px 20px 20px;
+    margin: 20px;
+    margin-top: 70px;
+}
+.xiugaiCSS{
+    background-color: #F7C242; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+.xiugaiCSS:hover{
+    background-color: white;
+    color: #F7C242;
+}
+.shanchuCSS{
+    background-color: #EB7A77; 
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 10px;
+    cursor: pointer;
+    padding: 5px 15px;
+}
+.shanchuCSS:hover{
+    background-color: white;
+    color: #EB7A77;
+}
+.btn {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing:10px;
+    margin: 25px 30px;
+    cursor: pointer;
+    padding: 10px 190px;
+}
+#btnAdd{background-color: #00896C;}
+#btnAdd:hover{background-color: #B5CAA0;}
+#btnSearch{background-color: #0089A7;}
+#btnSearch:hover{background-color: #577C8A;opacity: 0.7;}
+#btnUpdate{background-color: #F7C242;}
+#btnUpdate:hover{background-color: #DAC9A6;}
+#btnDelete{background-color: #EB7A77;}
+#btnDelete:hover{background-color: #B9887D;}
+.demo{
+/*    border: solid pink;*/
+    display: inline-block;
+    float: right;
+    width: 45%;
+    height: 550px;
+    margin: 20px;
+    margin-top: 70px;
+    margin-right: 20px;
+    padding: 30px 0px 20px 20px;
+}
+#demoSearch,#demoUpdate,#demoDelete{
+    overflow-y: auto;
+}
+#addtable,#searchtable,#updatetable,#deletetable{
+    border-collapse: collapse;
+    width: 97%;
+}
+#addtable th,#addtable td,#searchtable th,#searchtable td,#updatetable th,#updatetable td,#deletetable th,#deletetable td{
+    border-bottom: 1px solid #ddd;
+    padding: 15px;
+    text-align: left;
+}
+#addtable tr:hover {background-color:#B5CAA0;color:white;opacity: 0.7}
+#searchtable tr:hover {background-color:#577C8A;color:white;opacity: 0.5}
+#updatetable tr:hover {background-color:#DAC9A6;color:white;opacity: 0.7}
+#deletetable tr:hover {background-color:#B9887D;color:white;opacity: 0.7}

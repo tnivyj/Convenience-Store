@@ -1,0 +1,81 @@
+/* menu的css */
+body {
+/*    font-family: "i-regular";*/
+/*    font-family: "i-extralight";*/
+/*    font-family: "i-medium";*/
+/*    font-family: "i-bold";*/
+    font-family: "i-light";
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    /*background-color: rgba(0,0,0,0.2);*/
+    overflow-x: hidden;
+    transition: 1.5s;
+    padding-top: 100px;
+    line-height: 100px;
+/*    border: solid green;*/
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    display: block;
+    transition: 1.5s;
+}
+
+.sidenav .closebtn { /*不要删除'.closebtn'一删除就错*/
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+#main {
+/*    background-color: rgba(0,0,0,0.5);*/
+    width: 100%;
+    transition: 1.5s;
+    padding: 16px;
+    margin-left: 0;
+    position: fixed;
+    top: 0;
+    background-color: rgba(255,255,255,0.8);
+    
+    z-index: 1;
+/*    border: solid red;*/
+}
+#top{
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    cursor:pointer;
+    z-index: 1;
+}
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+/* content里面的css */
+#content{
+    /*border: solid yellow;*/
+    margin-top: 80px;
+}
+.icon{
+    width: 200px;
+    cursor:pointer;
+}
+.mini{
+    width: 50px;
+    cursor:pointer;
+}
+/*页面详细内容框框大小*/
+.store{
+    width: 100%;
+    height: 730px;
+}

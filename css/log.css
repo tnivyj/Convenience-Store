@@ -1,0 +1,13 @@
+.log{
+    position: fixed;
+    right: 80px;
+    top: 35px;
+    cursor:pointer;
+    z-index: 2;
+}
+#Mname{
+    position: fixed;
+    right: 140px;
+    top: 35px;
+    z-index: 2;
+}

@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "i-regular"; /*常规体*//*无法正常显示*/
+    src: url("../fonts/iosevka-regular.ttf") format("truetype")
+}
+@font-face {
+    font-family: "i-extralight"; /*加细体*/
+    src: url("../fonts/iosevka-extralight.ttf") format("truetype")
+}
+@font-face {
+    font-family: "i-medium"; /*中黑*/
+    src: url("../fonts/iosevka-medium.ttf") format("truetype")
+}
+@font-face {
+    font-family: "i-bold"; /*粗体*/
+    src: url("../fonts/iosevka-bold.ttf") format("truetype")
+}
+@font-face {
+    font-family: "i-light"; /*细体*/
+    src: url("../fonts/iosevka-light.ttf") format("truetype")
+}
